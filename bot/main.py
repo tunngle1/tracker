@@ -3,7 +3,13 @@
 """
 import asyncio
 import logging
+import sys
 from datetime import datetime
+from pathlib import Path
+
+# Добавляем родительскую директорию в путь для импортов
+# Это позволяет запускать как `python bot/main.py`
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import pytz
 from aiogram import Bot, Dispatcher
